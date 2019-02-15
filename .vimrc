@@ -159,5 +159,5 @@ filetype plugin indent on    " required
 colors zenburn
 
 " Shortcut to add breakpoint
-ab ip import ipdb; ipdb.set_trace()
+ab bp import ipdb; ipdb.set_trace()
 

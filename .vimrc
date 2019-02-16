@@ -1,5 +1,8 @@
 " Instructions for installing VIM:
 " https://github.com/Valloric/YouCompleteMe/wiki/Building-Vim-from-source
+" When compiling vim from source, remember to name the package something
+" other than 'vim' when running checkinstall. For example,
+" $ sudo checkinstall --pkgname vim-custom
 
 set nocompatible              " required
 filetype off                  " required

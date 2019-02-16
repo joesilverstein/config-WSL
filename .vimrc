@@ -1,7 +1,8 @@
 " Instructions for installing VIM:
 " https://github.com/Valloric/YouCompleteMe/wiki/Building-Vim-from-source
 " When compiling vim from source, remember to name the package something
-" other than 'vim' when running checkinstall. For example,
+" other than 'vim' when running checkinstall to prevent conflicts with
+" apt. For example,
 " $ sudo checkinstall --pkgname vim-custom
 
 set nocompatible              " required
@@ -103,10 +104,6 @@ syntax on
 "" To use zenburn, need to add the following to ~/.bashrc
 "" export=xterm-256color
 Plugin 'jnurmine/Zenburn' " color scheme for terminal mode
-set t_Co=256
-let g:zenburn_high_Contrast=1 " enable high contrast mode
-" High-contrast highlighting in visual mode
-hi Visual ctermfg=Black ctermbg=White cterm=bold
 
 " File tree
 Plugin 'scrooloose/nerdtree'
@@ -159,8 +156,16 @@ filetype plugin indent on    " required
 
 " Set color scheme to zenburn
 " (needs to be at bottom for some reason)
+set t_Co=256
+let g:zenburn_high_Contrast=1 " enable high contrast mode
 colors zenburn
+" High-contrast highlighting in visual mode.
+" Has to come after 'colors zenburn'
+hi Visual ctermfg=Black ctermbg=White cterm=bold
 
 " Shortcut to add breakpoint
 ab bp import ipdb; ipdb.set_trace()
+
+" Use '//' to search for visually-selected text
+vnoremap // y/<C-R>"<CR>
 

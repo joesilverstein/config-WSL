@@ -44,22 +44,6 @@ Plugin 'tmhedberg/SimpylFold'
 " See docstrings for folded code
 let g:SimpylFold_docstring_preview=1
 
-" PEP 8 indentation
-au BufNewFile, BufRead *.py
-    \ set tabstop=4 |
-    \ set softtabstop=4 |
-    \ set shiftwidth=4 |
-    \ set textwidth=79 |
-    \ set expandtab |
-    \ set autoindent |
-    \ set fileformat=unix
-
-" Other filetypes
-au BufNewFile, BufRead *.js, *.html, *.css
-    \ set tabstop=2 |
-    \ set softtabstop=2 |
-    \ set shiftwidth=2
-
 " Make auto-indentation work better
 Plugin 'vim-scripts/indentpython.vim'
 
@@ -187,3 +171,21 @@ vnoremap // y/<C-R>"<CR>
 
 " disable audio bell
 set belloff=all
+
+" PEP 8 indentation 
+autocmd FileType python
+    \ setlocal tabstop=4 |
+    \ setlocal softtabstop=4 |
+    \ setlocal shiftwidth=4 |
+    \ setlocal textwidth=79 |
+    \ setlocal autoindent |
+    \ setlocal fileformat=unix
+
+" JavaScript, HTML, and CSS filetypes
+autocmd FileType javascript,html,css
+    \ setlocal tabstop=2 |
+    \ setlocal softtabstop=2 |
+    \ setlocal shiftwidth=2 |
+
+" tab key enters spaces instead of tab character
+set expandtab

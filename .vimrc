@@ -169,3 +169,5 @@ ab bp import ipdb; ipdb.set_trace()
 " Use '//' to search for visually-selected text
 vnoremap // y/<C-R>"<CR>
 
+" disable audio bell
+set belloff=all

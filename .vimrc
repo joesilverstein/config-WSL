@@ -45,7 +45,7 @@ Plugin 'tmhedberg/SimpylFold'
 let g:SimpylFold_docstring_preview=1
 
 " PEP 8 indentation
-au BufNewFile,BufRead *.py
+au BufNewFile, BufRead *.py
     \ set tabstop=4 |
     \ set softtabstop=4 |
     \ set shiftwidth=4 |
@@ -55,7 +55,7 @@ au BufNewFile,BufRead *.py
     \ set fileformat=unix
 
 " Other filetypes
-au BufNewFile,BufRead *.js, *.html, *.css
+au BufNewFile, BufRead *.js, *.html, *.css
     \ set tabstop=2 |
     \ set softtabstop=2 |
     \ set shiftwidth=2

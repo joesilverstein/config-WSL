@@ -128,3 +128,13 @@ export=xterm-256color
 set -o vi
 
 export LC_ALL="en_US.UTF-8"
+
+# Ensure npm will find installed binaries and man pages.
+# Before doing this, need to create ~/.npm-packages directory.
+NPM_PACKAGES="${HOME}/.npm-packages"
+
+export PATH="$NPM_PACKAGES/bin:$PATH"
+
+# Unset manpath so we can inherit from /etc/manpath via the `manpath` command
+unset MANPATH # delete if you already modified MANPATH elsewhere in your config
+export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"

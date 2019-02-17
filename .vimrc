@@ -150,9 +150,25 @@ Plugin 'scrooloose/nerdcommenter'
 set list
 set listchars=tab:>-
 
+" Enables asynchronous linting/fixing
+Plugin 'w0rp/ale'
+
+" Set standard as only linter and fixer for JavaScript files
+" Need to make sure standard is already installed globally using
+" $ npm install standard --global
+let g:ale_linters = {
+\   'javascript': ['standard'],
+\}
+let g:ale_fixers = {'javascript': ['standard']}
+
+" lint and fix on save
+let g:ale_lint_on_save = 1
+let g:ale_fix_on_save = 1
+
 " All Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
+call vundle#end()
+
+filetype plugin indent on
 
 " Set color scheme to zenburn
 " (needs to be at bottom for some reason)

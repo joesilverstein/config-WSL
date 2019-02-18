@@ -1,2 +1,6 @@
-set editing-mode vi
-set keymap vi
+# Use VIM keybindings in bash
+#set editing-mode vi
+#set keymap vi
+
+# disable tab-completion bell
+set bell-style none

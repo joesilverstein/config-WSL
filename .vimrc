@@ -75,7 +75,8 @@ if 'VIRTUAL_ENV' in os.environ:
   execfile(activate_this, dict(__file__=activate_this))
 EOF
 
-" Check syntax on each save
+" Check syntax on each save.
+" Delete this if switching to ale.
 Plugin 'vim-syntastic/syntastic'
 
 " PEP 8 checking

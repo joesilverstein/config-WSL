@@ -125,7 +125,7 @@ alias mkvirtualenv3='mkvirtualenv --python=`which python3`'
 export=xterm-256color
 
 # enable VIM normal and insert mode in bash
-set -o vi
+#set -o vi
 
 export LC_ALL="en_US.UTF-8"
 

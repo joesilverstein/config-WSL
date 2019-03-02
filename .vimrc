@@ -80,7 +80,7 @@ EOF
 Plugin 'vim-syntastic/syntastic'
 
 " PEP 8 checking
-Plugin 'nvie/vim-flake8'
+"Plugin 'nvie/vim-flake8'
 
 " Make code look pretty
 let python_highlight_all=1
@@ -141,10 +141,14 @@ Plugin 'w0rp/ale'
 " Set standard as only linter and fixer for JavaScript files
 " Need to make sure standard is already installed globally using
 " $ npm install standard --global
+" For Python, need to pip install flake8 autopep8
 let g:ale_linters = {
 \   'javascript': ['standard'],
+\   'python': ['flake8'],
 \}
-let g:ale_fixers = {'javascript': ['standard']}
+"let g:ale_fixers = {
+"\   'javascript': ['standard'],
+"\   'python': ['autopep8'],}
 
 " lint and fix on save, but not before save.
 let g:ale_lint_on_text_changed = 0
@@ -175,7 +179,7 @@ vnoremap // y/<C-R>"<CR>
 " disable audio bell
 set belloff=all
 
-" PEP 8 indentation 
+" PEP 8 indentation
 autocmd FileType python
     \ setlocal tabstop=4 |
     \ setlocal softtabstop=4 |
@@ -192,3 +196,7 @@ autocmd FileType javascript,html,css
 
 " tab key enters spaces instead of tab character
 set expandtab
+
+" Remove trailing whitespace on save
+autocmd BufWritePre * :%s/\s\+$//e
+

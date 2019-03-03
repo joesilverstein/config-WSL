@@ -146,9 +146,9 @@ let g:ale_linters = {
 \   'javascript': ['standard'],
 \   'python': ['flake8'],
 \}
-"let g:ale_fixers = {
-"\   'javascript': ['standard'],
-"\   'python': ['autopep8'],}
+let g:ale_fixers = {
+\   'javascript': ['standard'],
+\   'python': ['autopep8'],}
 
 " lint and fix on save, but not before save.
 let g:ale_lint_on_text_changed = 0

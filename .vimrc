@@ -31,18 +31,18 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-" Enable folding
-set foldmethod=indent
-set foldlevel=99
+"" Enable folding
+"set foldmethod=indent
+"set foldlevel=99
 
-" Enable folding with the spacebar
-nnoremap <space> za
+"" Enable folding with the spacebar
+"nnoremap <space> za
 
-" Makes folding work better
-Plugin 'tmhedberg/SimpylFold'
+"" Makes folding work better
+"Plugin 'tmhedberg/SimpylFold'
 
-" See docstrings for folded code
-let g:SimpylFold_docstring_preview=1
+"" See docstrings for folded code
+"let g:SimpylFold_docstring_preview=1
 
 " Make auto-indentation work better
 Plugin 'vim-scripts/indentpython.vim'
@@ -57,13 +57,16 @@ set encoding=utf-8
 " sudo apt install build-essential cmake python3-dev
 " cd ~/.vim/bundle/YouCompleteMe
 " python3 install.py --clang-completer
-Bundle 'Valloric/YouCompleteMe'
+"Bundle 'Valloric/YouCompleteMe'
 
 " Ensure that the auto-complete window goes away when done with it,
 " and add shortcut for goto definition
 " space-g will goto definition of whatever you're currently on
-let g:ycm_autoclose_preview_window_after_completion=1
-map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+"let g:ycm_autoclose_preview_window_after_completion=1
+"map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+" Enable TabNine (machine-learning-assisted autocompletion)
+Plugin 'zxqfl/tabnine-vim'
 
 "python with virtualenv support
 py << EOF
@@ -77,7 +80,7 @@ EOF
 
 " Check syntax on each save.
 " Delete this if switching to ale.
-Plugin 'vim-syntastic/syntastic'
+"Plugin 'vim-syntastic/syntastic'
 
 " PEP 8 checking
 "Plugin 'nvie/vim-flake8'
@@ -91,29 +94,29 @@ syntax on
 Plugin 'jnurmine/Zenburn' " color scheme for terminal mode
 
 " File tree
-Plugin 'scrooloose/nerdtree'
+"Plugin 'scrooloose/nerdtree'
 
 " File tree tabs
-Plugin 'jistr/vim-nerdtree-tabs'
+"Plugin 'jistr/vim-nerdtree-tabs'
 
 " Hide .pyc files
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 
 " Search for almost anything from VIM by pressing ^Ctrl+P
-Plugin 'kien/ctrlp.vim'
+"Plugin 'kien/ctrlp.vim'
 
 " Turn on line numbering
 set nu
 
 " Git integration
-Plugin 'tpope/vim-fugitive'
+"Plugin 'tpope/vim-fugitive'
 
 " Status bar that displays current virtualenv, git branch,
 " files being edited, etc.
-Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+"Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 
 " Access system clipboard (not sure if works in Ubuntu)
-set clipboard=unnamed
+"set clipboard=unnamed
 
 " Wrap at 72 chars for comments.
 set formatoptions=cq textwidth=72 foldignore= wildignore+=*.py[co]

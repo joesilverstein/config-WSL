@@ -203,3 +203,7 @@ set expandtab
 " Remove trailing whitespace on save
 autocmd BufWritePre * :%s/\s\+$//e
 
+"" Show filename in fancy status bar at bottom
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+let g:airline_theme='angr'

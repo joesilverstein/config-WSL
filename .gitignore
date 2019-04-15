@@ -1,0 +1,7 @@
+*
+!.ipython/profile_default
+!.bashrc
+!.inputrc
+!.tmux.conf
+!.vimrc
+!.gitignore

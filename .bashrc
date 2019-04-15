@@ -117,7 +117,7 @@ if ! shopt -oq posix; then
 fi
 
 export WORKON_HOME=~/.virtualenvs
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3  
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 source ~/.local/bin/virtualenvwrapper.sh
 alias mkvirtualenv3='mkvirtualenv --python=`which python3`'
 

@@ -5,3 +5,4 @@
 !.tmux.conf
 !.vimrc
 !.gitignore
+!.config/nvim/init.vim

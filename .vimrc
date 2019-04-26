@@ -207,3 +207,11 @@ autocmd BufWritePre * :%s/\s\+$//e
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 let g:airline_theme='angr'
+
+
+" Clear highlighting on pressing ESC
+nnoremap <esc> :noh<return><esc>
+
+" Fill-in boilerplate to replace exact selected text when pressing
+" CTRL-R in visual mode.
+vnoremap <C-r> "hy:%s/\<<C-r>h\>//gc<left><left><left>

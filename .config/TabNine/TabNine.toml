@@ -1,0 +1,8 @@
+[language.python]
+command = "pyls"
+install = [["pipenv", "install", "python-language-server"]]
+
+[language.javascript]
+command = "flow"
+args = ["lsp"]
+install = [["yarn", "global", "add", "flow-bin"]]

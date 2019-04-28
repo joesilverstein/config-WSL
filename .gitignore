@@ -6,3 +6,4 @@
 !.vimrc
 !.gitignore
 !.config/nvim/init.vim
+!.config/TabNine/TabNine.toml

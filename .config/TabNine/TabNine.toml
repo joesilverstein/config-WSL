@@ -6,3 +6,8 @@ install = [["pipenv", "install", "python-language-server"]]
 command = "flow"
 args = ["lsp"]
 install = [["yarn", "global", "add", "flow-bin"]]
+
+[language.html]
+command = "html-languageserver"
+args = ["--stdio"]
+install = [["yarn", "global", "add", "vscode-html-languageserver-bin"]]

@@ -216,3 +216,6 @@ nnoremap <esc> :noh<return><esc>
 " Fill-in boilerplate to replace exact selected text when pressing
 " CTRL-R in visual mode.
 vnoremap <C-r> "hy:%s/\<<C-r>h\>//gc<left><left><left>
+
+" Prevent x key from overwriting the register in normal mode
+nnoremap x "_x

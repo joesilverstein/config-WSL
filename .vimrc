@@ -217,5 +217,6 @@ nnoremap <esc> :noh<return><esc>
 " CTRL-R in visual mode.
 vnoremap <C-r> "hy:%s/\<<C-r>h\>//gc<left><left><left>
 
-" Prevent x key from overwriting the register in normal mode
+" Prevent x and X keys from overwriting the register in normal mode
 nnoremap x "_x
+nnoremap X "_X

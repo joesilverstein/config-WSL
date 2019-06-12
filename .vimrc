@@ -147,7 +147,7 @@ Plugin 'w0rp/ale'
 " For Python, need to pip install flake8 autopep8
 let g:ale_linters = {
 \   'javascript': ['standard'],
-\   'python': ['flake8'],
+\   'python': ['flake8', 'pylint'],
 \}
 let g:ale_fixers = {
 \   'javascript': ['standard'],

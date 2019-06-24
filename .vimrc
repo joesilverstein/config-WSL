@@ -1,9 +1,5 @@
-" Instructions for installing VIM:
-" https://github.com/Valloric/YouCompleteMe/wiki/Building-Vim-from-source
-" When compiling vim from source, remember to name the package something
-" other than 'vim' when running checkinstall to prevent conflicts with
-" apt. For example,
-" $ sudo checkinstall --pkgname vim-custom
+" toggle paste mode by pressing <F2>
+set pastetoggle=<F2>
 
 set nocompatible              " required
 filetype off                  " required
@@ -12,14 +8,10 @@ filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
+" let Vundle manage Vundle:
+" First need to run
+" $ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 Plugin 'gmarik/Vundle.vim'
-
-" toggle paste mode by pressing <F2>
-set pastetoggle=<F2>
 
 " split layouts
 set splitbelow
@@ -31,17 +23,17 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-"" Enable folding
+" Enable folding
 "set foldmethod=indent
 "set foldlevel=99
 
-"" Enable folding with the spacebar
+" Enable folding with the spacebar
 "nnoremap <space> za
 
-"" Makes folding work better
+" Makes folding work better
 "Plugin 'tmhedberg/SimpylFold'
 
-"" See docstrings for folded code
+" See docstrings for folded code
 "let g:SimpylFold_docstring_preview=1
 
 " Make auto-indentation work better
@@ -65,18 +57,18 @@ set encoding=utf-8
 "let g:ycm_autoclose_preview_window_after_completion=1
 "map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
-" Enable TabNine (machine-learning-assisted autocompletion)
+" TabNine Autocompletion
 Plugin 'zxqfl/tabnine-vim'
 
 "python with virtualenv support
-py << EOF
-import os
-import sys
-if 'VIRTUAL_ENV' in os.environ:
-  project_base_dir = os.environ['VIRTUAL_ENV']
-  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-  execfile(activate_this, dict(__file__=activate_this))
-EOF
+"py << EOF
+"import os
+"import sys
+"if 'VIRTUAL_ENV' in os.environ:
+"  project_base_dir = os.environ['VIRTUAL_ENV']
+"  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+"  execfile(activate_this, dict(__file__=activate_this))
+"EOF
 
 " Check syntax on each save.
 " Delete this if switching to ale.
@@ -91,6 +83,8 @@ syntax on
 
 "" To use zenburn, need to add the following to ~/.bashrc
 "" export=xterm-256color
+" Also need to simply copy the file to colors/ subdirectory under
+" Vim configuration folder (e.g. ~/.vim/colors or C:\vim\colors).
 Plugin 'jnurmine/Zenburn' " color scheme for terminal mode
 
 " File tree
@@ -100,7 +94,7 @@ Plugin 'jnurmine/Zenburn' " color scheme for terminal mode
 "Plugin 'jistr/vim-nerdtree-tabs'
 
 " Hide .pyc files
-let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
+"let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 
 " Search for almost anything from VIM by pressing ^Ctrl+P
 "Plugin 'kien/ctrlp.vim'
@@ -144,21 +138,24 @@ Plugin 'w0rp/ale'
 " Set standard as only linter and fixer for JavaScript files
 " Need to make sure standard is already installed globally using
 " $ npm install standard --global
-" For Python, need to pip install flake8 autopep8
 let g:ale_linters = {
 \   'javascript': ['standard'],
 \   'python': ['flake8', 'pylint'],
 \}
 let g:ale_fixers = {
 \   'javascript': ['standard'],
-\   'python': ['autopep8'],
-\}
+\   'python': ['autopep8'],}
 
 " lint and fix on save, but not before save.
 let g:ale_lint_on_text_changed = 0
 let g:ale_lint_on_enter = 0
 let g:ale_lint_on_save = 1
 let g:ale_fix_on_save = 1
+
+" Show filename in fancy status bar at bottom
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+let g:airline_theme='angr'
 
 " All Plugins must be added before the following line
 call vundle#end()
@@ -174,8 +171,12 @@ colors zenburn
 " Has to come after 'colors zenburn'
 hi Visual ctermfg=Black ctermbg=White cterm=bold
 
-" Shortcut to add breakpoint
+" Shortcut to add breakpoint in python
 ab bp import ipdb; ipdb.set_trace()
+
+" Shortcut to add embedded ipython session (to get full benefits of
+" ipython)
+ab em from IPython import embed; embed()
 
 " Use '//' to search for visually-selected text
 vnoremap // y/<C-R>"<CR>
@@ -193,7 +194,7 @@ autocmd FileType python
     \ setlocal fileformat=unix
 
 " JavaScript, HTML, and CSS filetypes
-autocmd FileType javascript,html,htmldjango,css
+autocmd FileType javascript,html,css
     \ setlocal tabstop=2 |
     \ setlocal softtabstop=2 |
     \ setlocal shiftwidth=2 |
@@ -203,12 +204,6 @@ set expandtab
 
 " Remove trailing whitespace on save
 autocmd BufWritePre * :%s/\s\+$//e
-
-"" Show filename in fancy status bar at bottom
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-let g:airline_theme='angr'
-
 
 " Clear highlighting on pressing ESC
 nnoremap <esc> :noh<return><esc>
@@ -220,3 +215,4 @@ vnoremap <C-r> "hy:%s/\<<C-r>h\>//gc<left><left><left>
 " Prevent x and X keys from overwriting the register in normal mode
 nnoremap x "_x
 nnoremap X "_X
+

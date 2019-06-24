@@ -145,3 +145,7 @@ export NVM_DIR="$HOME/.nvm"
 
 # Add globally-installed yarn packages to PATH
 export PATH="$HOME/.yarn/bin:$PATH"
+
+# Proxy to allow Docker-compose in WSL to access Docker in Windows
+# (since there's no docker for WSL).
+export DOCKER_HOST=tcp://localhost:2375

@@ -149,3 +149,6 @@ export PATH="$HOME/.yarn/bin:$PATH"
 # Proxy to allow Docker-compose in WSL to access Docker in Windows
 # (since there's no docker for WSL).
 export DOCKER_HOST=tcp://localhost:2375
+
+# Configure WSL to send the display of graphical apps over to Windows
+export DISPLAY=:0

@@ -85,7 +85,7 @@ syntax on
 "" export=xterm-256color
 " Also need to simply copy the file to colors/ subdirectory under
 " Vim configuration folder (e.g. ~/.vim/colors or C:\vim\colors).
-Plugin 'jnurmine/Zenburn' " color scheme for terminal mode
+"Plugin 'jnurmine/Zenburn' " color scheme for terminal mode
 
 " File tree
 "Plugin 'scrooloose/nerdtree'
@@ -164,9 +164,9 @@ filetype plugin indent on
 
 " Set color scheme to zenburn
 " (needs to be at bottom for some reason)
-set t_Co=256
-let g:zenburn_high_Contrast=1 " enable high contrast mode
-colors zenburn
+"set t_Co=256
+"let g:zenburn_high_Contrast=1 " enable high contrast mode
+"colors zenburn
 " High-contrast highlighting in visual mode.
 " Has to come after 'colors zenburn'
 hi Visual ctermfg=Black ctermbg=White cterm=bold
@@ -216,3 +216,4 @@ vnoremap <C-r> "hy:%s/\<<C-r>h\>//gc<left><left><left>
 nnoremap x "_x
 nnoremap X "_X
 
+hi Normal guibg=NONE ctermbg=NONE

@@ -152,3 +152,7 @@ export DOCKER_HOST=tcp://localhost:2375
 
 # Configure WSL to send the display of graphical apps over to Windows
 export DISPLAY=:0
+
+# Prevent highlighting of directories when using ls
+LS_COLORS=$LS_COLORS:'ow=1;34:'
+export LS_COLORS

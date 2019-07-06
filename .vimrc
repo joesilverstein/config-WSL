@@ -115,10 +115,6 @@ set nu
 " Wrap at 72 chars for comments.
 set formatoptions=cq textwidth=72 foldignore= wildignore+=*.py[co]
 
-" Highlight end of line whitespace.
-highlight WhitespaceEOL ctermbg=red guibg=red
-match WhitespaceEOL /\s\+$/
-
 " Allow backspacing over everything in insert mode.
 set backspace=indent,eol,start
 

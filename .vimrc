@@ -23,59 +23,14 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-" Enable folding
-"set foldmethod=indent
-"set foldlevel=99
-
-" Enable folding with the spacebar
-"nnoremap <space> za
-
-" Makes folding work better
-"Plugin 'tmhedberg/SimpylFold'
-
-" See docstrings for folded code
-"let g:SimpylFold_docstring_preview=1
-
 " Make auto-indentation work better
 Plugin 'vim-scripts/indentpython.vim'
 
 " Use UTF-8 encoding
 set encoding=utf-8
 
-" Enable auto-complete
-" To get it to work, need to do the following:
-" sudo apt purge python-openssl
-" sudo apt install python-openssl
-" sudo apt install build-essential cmake python3-dev
-" cd ~/.vim/bundle/YouCompleteMe
-" python3 install.py --clang-completer
-"Bundle 'Valloric/YouCompleteMe'
-
-" Ensure that the auto-complete window goes away when done with it,
-" and add shortcut for goto definition
-" space-g will goto definition of whatever you're currently on
-"let g:ycm_autoclose_preview_window_after_completion=1
-"map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
-
 " TabNine Autocompletion
 Plugin 'zxqfl/tabnine-vim'
-
-"python with virtualenv support
-"py << EOF
-"import os
-"import sys
-"if 'VIRTUAL_ENV' in os.environ:
-"  project_base_dir = os.environ['VIRTUAL_ENV']
-"  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-"  execfile(activate_this, dict(__file__=activate_this))
-"EOF
-
-" Check syntax on each save.
-" Delete this if switching to ale.
-"Plugin 'vim-syntastic/syntastic'
-
-" PEP 8 checking
-"Plugin 'nvie/vim-flake8'
 
 " Make code look pretty
 let python_highlight_all=1
@@ -104,10 +59,6 @@ set nu
 
 " Git integration
 "Plugin 'tpope/vim-fugitive'
-
-" Status bar that displays current virtualenv, git branch,
-" files being edited, etc.
-"Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 
 " Access system clipboard (not sure if works in Ubuntu)
 "set clipboard=unnamed
@@ -152,6 +103,17 @@ let g:ale_fix_on_save = 1
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 let g:airline_theme='angr'
+" Special vim-airline configuration for WSL
+" https://github.com/vim-airline/vim-airline
+let g:airline_powerline_fonts = 1
+" Incompatible powerline symbols for Iosevka font
+" https://github.com/vim-airline/vim-airline/wiki/FAQ
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_symbols.linenr = " "
+" https://github.com/vim-airline/vim-airline/issues/1397
+let g:airline_symbols.whitespace = " "
 
 " All Plugins must be added before the following line
 call vundle#end()
@@ -212,4 +174,5 @@ vnoremap <C-r> "hy:%s/\<<C-r>h\>//gc<left><left><left>
 nnoremap x "_x
 nnoremap X "_X
 
+" transparent background
 hi Normal guibg=NONE ctermbg=NONE

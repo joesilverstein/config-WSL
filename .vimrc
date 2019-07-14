@@ -33,7 +33,7 @@ set encoding=utf-8
 Plugin 'zxqfl/tabnine-vim'
 
 " Make code look pretty
-let python_highlight_all=1
+"let python_highlight_all=1
 syntax on
 
 "" To use zenburn, need to add the following to ~/.bashrc
@@ -114,6 +114,8 @@ endif
 let g:airline_symbols.linenr = " "
 " https://github.com/vim-airline/vim-airline/issues/1397
 let g:airline_symbols.whitespace = " "
+" display full path of file
+let g:airline_section_c = '%<%F%m %#__accent_red#%{airline#util#wrap(airline#parts#readonly(),0)}%#__restore__#'
 
 " All Plugins must be added before the following line
 call vundle#end()
@@ -127,7 +129,8 @@ filetype plugin indent on
 "colors zenburn
 " High-contrast highlighting in visual mode.
 " Has to come after 'colors zenburn'
-hi Visual ctermfg=Black ctermbg=White cterm=bold
+hi Visual ctermfg=White ctermbg=LightCyan cterm=bold
+hi Search cterm=NONE ctermfg=grey ctermbg=LightGreen
 
 " Shortcut to add breakpoint in python
 ab bp import ipdb; ipdb.set_trace()
@@ -176,3 +179,6 @@ nnoremap X "_X
 
 " transparent background
 hi Normal guibg=NONE ctermbg=NONE
+
+" Disable the preview window, since it gets annoying
+set completeopt-=preview

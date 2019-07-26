@@ -182,3 +182,6 @@ hi Normal guibg=NONE ctermbg=NONE
 
 " Disable the preview window, since it gets annoying
 set completeopt-=preview
+
+" Change parentheses-matching highlighting colors
+hi MatchParen cterm=bold ctermbg=blue ctermfg=black

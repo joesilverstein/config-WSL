@@ -184,4 +184,4 @@ hi Normal guibg=NONE ctermbg=NONE
 set completeopt-=preview
 
 " Change parentheses-matching highlighting colors
-hi MatchParen cterm=bold ctermbg=blue ctermfg=black
+hi MatchParen cterm=bold ctermbg=grey ctermfg=white

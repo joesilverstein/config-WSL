@@ -133,7 +133,7 @@ hi Visual ctermfg=White ctermbg=LightCyan cterm=bold
 hi Search cterm=NONE ctermfg=grey ctermbg=LightGreen
 
 " Shortcut to add breakpoint in python
-ab bp import ipdb; ipdb.set_trace()
+ab bp __import__('pdb').set_trace()
 
 " Shortcut to add embedded ipython session (to get full benefits of
 " ipython)
